@@ -1,0 +1,8 @@
+.search-container {
+    height: 5vh;
+    width: 30vw;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 10vh;
+}

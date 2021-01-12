@@ -1,0 +1,10 @@
+.display-container{
+    height: 85vh;
+    width: 30vw;
+    background-color: #421865;
+    position: absolute;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 15vh;
+}
