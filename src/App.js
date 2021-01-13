@@ -1,8 +1,8 @@
 import './App.css';
-import Display from './components/Display';
-import Header from './components/Header';
+import Display from './components/Display/Display';
+import Header from './components/Header/Header';
 import MapView from './components/MapView';
-import Search from './components/Search';
+import Search from './components/Search/Search';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Display>
         
       </Display>
+  
     </div>
   );
 }
