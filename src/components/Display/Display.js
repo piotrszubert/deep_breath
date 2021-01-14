@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Details from '../Details/Details';
 import './Display.css';
 
-function Display() {
-    return(
-        <div className="display-container">
-
-        </div>
-    )
+class Display extends Component {
+    render() {
+        return (
+            <div className="display-container">
+                <Details />
+            </div>
+        );
+    }
 }
 
 export default Display;

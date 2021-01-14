@@ -11,10 +11,7 @@ function App() {
       </Header>
       <MapView/>
       <Search/>
-      <Display>
-        
-      </Display>
-  
+      <Display/>
     </div>
   );
 }

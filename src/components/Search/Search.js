@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component }from 'react';
 import './Search.css';
-function Search() {
-    return (
-        <div className="search-container">
-            <input type="text" placeholder="City"/>
+
+class Search extends Component {
+    render() {
+        return (
+            <div className="search-container">
+            <input className="search-input" type="text" placeholder="City"/>
             <button className="search-btn" type="submit">Search </button>
         </div>
-    )
+        )
+    }
 }
-
 export default Search;
