@@ -29,7 +29,11 @@ return isLoading ? (<h1>loading..</h1>) : (
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
 
-   
+{
+   items.map((item => (
+    <Marker position={[item.gegrLat, item.gegrLon]}></Marker>
+    )))
+}
  
     <Marker position={[51.775411, 19.450900]}>
       <Popup>
