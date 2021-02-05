@@ -8,20 +8,19 @@ import Search from './components/Search/Search';
 import City from './components/city'
 
 const App = () => {
-  const[items, setItems] = useState([]);
-  const[isLoading, setIsLoading] = useState(true);
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
       //https://cors-anywhere.herokuapp.com/  --> proxy for get rid CORS; just don't wanna build backend for this app :'
       //const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.gios.gov.pl/pjp-api/rest/station/sensors/14`)
       const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.gios.gov.pl/pjp-api/rest/station/findAll`)
-      console.log(result.data);
-      console.log(result.data[0].city);
+      //  console.log(result.data);
+      // console.log(result.data[0].city);
+      // console.log(result.data[0].city.name);
 
-      console.log(result.data[0].city.name);
 
-      
       setItems(result.data);
       setIsLoading(false);
     }
@@ -31,11 +30,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header/>
-      <MapView/>
-      <Search/>
-      <City isLoading={isLoading} items={items}/>
-      <Display/>
+      <Header />
+      <MapView isLoading={isLoading} items={items} />
+      <Search />
+      <City isLoading={isLoading} items={items} />
+      <Display />
     </div>
   );
 }
