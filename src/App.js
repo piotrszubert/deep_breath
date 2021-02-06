@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Display from './components/Display/Display';
+
 import Header from './components/Header/Header';
 import MapView from './components/MapView';
 import Search from './components/Search/Search';
@@ -14,8 +14,9 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       //https://cors-anywhere.herokuapp.com/  --> proxy for get rid CORS; just don't wanna build backend for this app :'
-      //const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.gios.gov.pl/pjp-api/rest/station/sensors/14`)
-      const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.gios.gov.pl/pjp-api/rest/station/findAll`)
+      
+      const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.gios.gov.pl/pjp-api/rest/station/findAll`);
+   
       //  console.log(result.data);
       // console.log(result.data[0].city);
       // console.log(result.data[0].city.name);
@@ -32,11 +33,12 @@ const App = () => {
     <div className="App">
       <Header />
       <MapView isLoading={isLoading} items={items} />
-      <Search />
-      <City isLoading={isLoading} items={items} />
-      <Display />
+     <Search />
+      
     </div>
   );
+
+  //<City isLoading={isLoading} items={items} />
 }
 
 export default App;
