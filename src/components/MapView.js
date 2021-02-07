@@ -1,4 +1,4 @@
-import { marker } from 'leaflet';
+
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
@@ -34,6 +34,7 @@ function Map({ items, isLoading }) {
                 <h2>{item.stationName}</h2>
                 <p>Miasto: <strong>{item.city.name}</strong></p>
                 <p>Ulica: <strong>{item.addressStreet}</strong></p>
+                <p>{item.id}</p>
               </div>
             </Popup>
           </Marker>

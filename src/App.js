@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-
 import Header from './components/Header/Header';
 import MapView from './components/MapView';
 import Search from './components/Search/Search';
-import City from './components/city'
+//import City from './components/city'
 
 const App = () => {
   const [items, setItems] = useState([]);
