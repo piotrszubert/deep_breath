@@ -5,11 +5,13 @@ const axios = require('axios');
 const app = express();
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('check /api')
+const port = process.env.PORT || 3000;
+
+app.get('/', (request, response) => {
+    response.send('build to proxy cors check endpoint "/stations"')
 });
 
-app.get('/api', (request, response) => {
+app.get('/stations', (request, response) => {
     axios.get('http://api.gios.gov.pl/pjp-api/rest/station/findAll')
         .then((res) => {
             response.send(res.data);
@@ -19,6 +21,6 @@ app.get('/api', (request, response) => {
         })
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server is listening on port 3000');
 });
