@@ -8,7 +8,7 @@ app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.get('/', (request, response) => {
-    response.send('build to proxy cors check endpoint "/stations"')
+    response.send('build to proxy cors; check endpoint "/stations"')
 });
 
 app.get('/stations', (request, response) => {

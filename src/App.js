@@ -12,13 +12,13 @@ import Search from './components/Search/Search';
 //https://deepbreath-api.herokuapp.com/stations
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  const [stations, setStations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`https://deepbreath-api.herokuapp.com/stations`)
-      setItems(result.data);
+      setStations(result.data);
       setIsLoading(false);
     }
     fetchItems();
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <MapView isLoading={isLoading} items={items} />
+      <MapView isLoading={isLoading} stations={stations} />
       <Search />
 
     </div>

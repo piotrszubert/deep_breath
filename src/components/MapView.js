@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
-function Map({ items, isLoading }) {
+function Map({ stations, isLoading }) {
   return isLoading ? (<h1>loading..</h1>) : (
 
     <MapContainer center={[51.775411, 19.450900]} zoom={11} scrollWheelZoom={false}>
@@ -12,14 +11,14 @@ function Map({ items, isLoading }) {
       />
 
       {
-        items.map((item => (
-          <Marker key={item.id} position={[item.gegrLat, item.gegrLon]}>
+        stations.map((station => (
+          <Marker key={station.id} position={[station.gegrLat, station.gegrLon]}>
             <Popup>
               <div>
-                <h2>{item.stationName}</h2>
-                <p>Miasto: <strong>{item.city.name}</strong></p>
-                <p>Ulica: <strong>{item.addressStreet}</strong></p>
-                <p>{item.id}</p>
+                <h2>{station.stationName}</h2>
+                <p>Miasto: <strong>{station.city.name}</strong></p>
+                <p>Ulica: <strong>{station.addressStreet}</strong></p>
+                <p>{station.id}</p>
               </div>
             </Popup>
           </Marker>
