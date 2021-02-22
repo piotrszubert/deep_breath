@@ -1,16 +1,15 @@
-.search-container {
+.search {
     height: 5vh;
-    width: 25vh;
-    display: flex;
+    width: 30vh;
     position: absolute;
-    right: 0;
-    top: 0;
-    margin-bottom: 80px;
+    right: 1px;
+    top: 5vh;
 }
 
 .search-input {
-    width: auto;
+    width: 27vh;
     padding: 10px;
     text-transform: capitalize;
     font-size: 14px;
+    border: 0;
 }
