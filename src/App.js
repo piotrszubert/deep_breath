@@ -27,13 +27,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header className="header"/>
+      <Header isLoading={isLoading} className="header"/>
       <MapView isLoading={isLoading} stations={stations} />
-      <Search className="search"/>
-      <Display stations={stations}></Display>
+      <div className="display-container">    
+      <Search isLoading={isLoading}/>
+      <Display stations={stations}/>
+      </div>
     </div>
   );
-  //<City isLoading={isLoading} items={items} />
 }
 
 export default App;

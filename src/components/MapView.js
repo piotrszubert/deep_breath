@@ -1,8 +1,9 @@
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import './loader.css'
 
 const Map = ({ stations, isLoading }) => {
-  return isLoading ? (<h1>loading..</h1>) : (
+  return isLoading ? (<h1 className="loader">loading..</h1>) : (
 
     <MapContainer center={[51.775411, 19.450900]} zoom={11} scrollWheelZoom={false}>
       <TileLayer

@@ -4,7 +4,8 @@
     display: flex;
     position: absolute;
     right: 0;
-    top: 10vh;
+    top: 0;
+    margin-bottom: 80px;
 }
 
 .search-input {
