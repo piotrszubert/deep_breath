@@ -8,68 +8,36 @@ app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.get('/', (request, response) => {
-    response.send('build to proxy cors; check endpoint "/stations"')
+    response.send(`Build to proxy cors </br> 
+    All Data obtained from <a target="_blank" href=https://powietrze.gios.gov.pl/pjp/content/api> GIOŚ API </a></br></br></br>
+    Check endpoint "/stations" for all stations list </br>
+    Check endpoint "/station/{id} for air quality index of specific station`)
 });
 
-
+//------------------ LIST OF ALL STATIONS
 app.get('/stations', (request, response) => {
     axios.get('http://api.gios.gov.pl/pjp-api/rest/station/findAll')
         .then((res) => {
             response.send(res.data);
             console.log(res.data);
-
-            // all stations IDs
-           /*  for (let i= 0; i < res.data.length; i++) {
-                //console.log(res.data[i].id);
-                    //resp.send(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`)
-               // console.log(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`);
-                axios.get(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`)
-                .then((res) => {
-                    console.log(res.data);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-            } */
         })
         .catch((err) => {
             console.log(err);
         })
 });
 
-
-app.get('/stations/quality', (request, response) => {
-    axios.get('http://api.gios.gov.pl/pjp-api/rest/station/findAll')
-    .then((res) => {
-        // all stations IDs
-        for (let i= 0; i < res.data.length; i++) {
-            //console.log(res.data[i].id);
-                //resp.send(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`)
-           // console.log(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`);
-            axios.get(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`)
-            .then((res) => {
-                console.log(res.data);
-                response.send(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        }
-    })
+//------------------ STATION AIR QUALITY INDEX
+app.get('/station/:id', (request, response) => {
+    let id = request.params.id;
+    axios.get(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${id}`)
+    .then((res => {
+        response.send(res.data);
+        console.log(res.data)
+    }))
     .catch((err) => {
         console.log(err);
     })
 });
-
-/* 
-                //LINKS TO STATION AIR INDEX
-                app.get('/stations/links', (reque, respo) => {
-                    respo.send(`http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/${res.data[i].id}`)
-                }) */
-
-//indeks jakosci powietrza
-//http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/{stationId}
-
 
 app.listen(port, () => {
     console.log('server is listening on port 3000');

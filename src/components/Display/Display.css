@@ -1,6 +1,7 @@
 .stations {
   border: 2px solid #111;
-  width: 25vh;
+  width: auto;
+  min-width: 28vw;
   margin-bottom: 10px;
 }
 

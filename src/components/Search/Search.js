@@ -5,7 +5,7 @@ const Search = ({ isLoading, handleSearch }) => {
     return isLoading ? (<div></div>) : (
         <div className="search">
             <form>
-            <input onChange={handleSearch} className="search-input" type="text" placeholder="City" />
+            <input onChange={handleSearch} className="search-input" type="text" placeholder="Miasto" />
             </form>
         </div>
     )

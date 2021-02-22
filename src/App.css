@@ -15,7 +15,7 @@ body {
   position: absolute;
   right: 0px;
   top: 10vh;
-  overflow: scroll;
+  overflow: auto;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
