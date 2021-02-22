@@ -1,6 +1,6 @@
 .search-container {
     height: 5vh;
-    width: 30vw;
+    width: 25vh;
     display: flex;
     position: absolute;
     right: 0;
@@ -8,5 +8,8 @@
 }
 
 .search-input {
-    width: 100%;
+    width: auto;
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 14px;
 }

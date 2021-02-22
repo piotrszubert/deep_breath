@@ -16,6 +16,8 @@ app.get('/stations', (request, response) => {
     axios.get('http://api.gios.gov.pl/pjp-api/rest/station/findAll')
         .then((res) => {
             response.send(res.data);
+            console.log(res.data);
+
             // all stations IDs
            /*  for (let i= 0; i < res.data.length; i++) {
                 //console.log(res.data[i].id);

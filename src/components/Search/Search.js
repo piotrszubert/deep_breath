@@ -1,14 +1,13 @@
-import React, { Component }from 'react';
+import React from 'react';
 import './Search.css';
 
-class Search extends Component {
-    render() {
-        return (
-            <div className="search-container">
-            <input className="search-input" type="text" placeholder="City"/>
-            <button className="search-btn" type="submit">Search </button>
+const Search = () => {
+    return (
+        <div className="search-container">
+            <form>
+            <input className="search-input" type="text" placeholder="City" />
+            </form>
         </div>
-        )
-    }
+    )
 }
 export default Search;

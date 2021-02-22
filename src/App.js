@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import MapView from './components/MapView';
 import Search from './components/Search/Search';
+import Display from './components/Display/Display';
 
 //build own api proxy;
 //deployed live on 
@@ -26,10 +27,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header className="header"/>
       <MapView isLoading={isLoading} stations={stations} />
-      <Search />
-
+      <Search className="search"/>
+      <Display stations={stations}></Display>
     </div>
   );
   //<City isLoading={isLoading} items={items} />
