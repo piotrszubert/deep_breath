@@ -1,11 +1,11 @@
 import React from 'react';
 import './Search.css';
 
-const Search = ({ isLoading }) => {
+const Search = ({ isLoading, handleSearch }) => {
     return isLoading ? (<div></div>) : (
         <div className="search-container">
             <form>
-            <input className="search-input" type="text" placeholder="City" />
+            <input onChange={handleSearch} className="search-input" type="text" placeholder="City" />
             </form>
         </div>
     )

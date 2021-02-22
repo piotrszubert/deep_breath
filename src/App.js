@@ -25,13 +25,24 @@ const App = () => {
     fetchItems();
   }, [])
 
+  const [search, setSearch] = useState('');
+
+  const handleSearch = (e) => {
+    e.target.value.toLowerCase();
+    setSearch(e.target.value);
+  }
+
+  const filteredStations = stations.filter(station => 
+    station.city.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="App">
-      <Header isLoading={isLoading} className="header"/>
+      <Header isLoading={isLoading} className="header" />
       <MapView isLoading={isLoading} stations={stations} />
-      <div className="display-container">    
-      <Search isLoading={isLoading}/>
-      <Display stations={stations}/>
+      <div className="display-container">
+        <Search handleSearch={handleSearch} isLoading={isLoading} />
+        <Display filteredStations={filteredStations} />
       </div>
     </div>
   );
