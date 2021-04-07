@@ -39,8 +39,7 @@ const App = () => {
   return (
     <div className="App">
       <Header isLoading={isLoading} className="header" />
-      <MapView isLoading={isLoading} stations={stations} />
-      
+      <MapView isLoading={isLoading}  stations={stations} />
       <Search handleSearch={handleSearch} isLoading={isLoading} />
       <div className="display-container">
         <Display filteredStations={filteredStations} />
